@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div id="home-container">
+
+      <div class="post-box">
+              <img src="{{ page.image }}" alt="{{ page.title }}">
+              <div class="post-text">
+                      <h2>{{ page.title }} </h2>
+                      <h3>{{ page.date | date_to_long_string }}</h3>
+                      <hr>
+                      
+                  <div class="post-content">{{ page.content }}</div>
+                  <hr>
+                  <div class="tags"> 
+                      
+                  {% for tag in page.tags %}
+                  <a class="tag-link" href="/tags/#{{ tag }}">{{tag}}</a>
+                  {% endfor %}
+              </div>
+              </div>
+          </div>
+
+  
+  </div>

@@ -1,0 +1,98 @@
+title: Carolineolivia.dk
+author: Caroline Olivia
+url: https://www.carolineolivia.dk
+description: Webdeveloper
+
+sass:
+  style: compressed
+
+highlighter: rouge
+exclude:
+  - "*README.md"
+  - bower_components
+  - node_modules
+  - LICENSE
+
+timezone: Europe/Copenhagen
+markdown: kramdown
+permalink: /:title/
+plugins:
+  - jekyll-responsive-image
+  - jekyll-seo-tag
+  - jekyll-feed
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:categories/:title/
+
+defaults:
+  -
+    scope:
+      type: posts
+    values:
+      layout: post
+  
+
+
+responsive_image:
+  # [Required]
+  # Path to the image template.
+  template: _includes/responsive-image.html
+
+  # [Optional, Default: 85]
+  # Quality to use when resizing images.
+  default_quality: 90
+
+  # [Optional, Default: []]
+  # An array of resize configuration objects. Each object must contain at least
+  # a `width` value.
+  sizes:
+    - width: 400
+    - width: 800
+    - width: 1500
+
+  # [Optional, Default: false]
+  # Rotate resized images depending on their EXIF rotation attribute. Useful for
+  # working with JPGs directly from digital cameras and smartphones
+  auto_rotate: false
+
+  # [Optional, Default: false]
+  # Strip EXIF and other JPEG profiles. Helps to minimize JPEG size and win friends
+  # at Google PageSpeed.
+  strip: false
+
+  # [Optional, Default: assets]
+  # The base directory where assets are stored. This is used to determine the
+  # `dirname` value in `output_path_format` below.
+  base_path: assets
+
+  # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
+  # The template used when generating filenames for resized images. Must be a
+  # relative path.
+  #
+  # Parameters available are:
+  #   %{dirname}     Directory of the file relative to `base_path` (assets/sub/dir/some-file.jpg => sub/dir)
+  #   %{basename}    Basename of the file (assets/some-file.jpg => some-file.jpg)
+  #   %{filename}    Basename without the extension (assets/some-file.jpg => some-file)
+  #   %{extension}   Extension of the file (assets/some-file.jpg => jpg)
+  #   %{width}       Width of the resized image
+  #   %{height}      Height of the resized image
+  #
+  output_path_format: assets/%{width}/%{basename}
+
+  # [Optional, Default: true]
+  # Whether or not to save the generated assets into the source folder.
+  save_to_source: false
+
+  # [Optional, Default: false]
+  # Cache the result of {% responsive_image %} and {% responsive_image_block %}
+  # tags. See the "Caching" section of the README for more information.
+  cache: false
+
+  # [Optional, DefaultHej
+  # By default, only iHeje responsive_image and responsive_image_block
+  # tags are resized. Hejt of paths or path globs to resize other
+  # images. This is usHejes which will be referenced from stylesheets.
+  extra_images:
+    - img/*.{jpeg,jpg,png}
